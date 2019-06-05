@@ -1,8 +1,81 @@
 {
+	"Bulbasaur": {
+		"Name": "Bulbasaur",
+		"Health": 45,
+		"Attack": 49,
+		"Defence": 49,
+		"SpAtk": 65,
+		"SpDef": 65,
+		"Type": {
+			"Type1": "Grass", 
+			"Type2": "Poison"
+			},
+		"Route": {
+			"Loc1": "Route 2",
+			"Loc2": "Route 3",
+			"Loc3": null,
+			"Loc4": null,
+			"Loc5": null
+		},
+		"Abilty": {
+			"Ability1": "Overgrow",
+			"Ablilty2": "Cholorphyll",
+			"Ability3": null 
+			},
+		"PokeID": 1
 
-	"Name": "Pikachu",
-	"Attack": 3,
-	"Defence": 5
+		},
+	"Seel": {
+		"Name": "Seel",
+		"Health": 65,
+		"Attack": 45,
+		"Defence": 55,
+		"SpAtk": 45,
+		"SpDef": 70,
+		"Type": {
+			"Type1": "Water", 
+			"Type2": null
+			},
+		"Route": {
+			"Loc1": "Route 18",
+			"Loc2": "Seafoam Island",
+			"Loc3": null,
+			"Loc4": null,
+			"Loc5": null
+		},
+		"Abilty": {
+			"Ability1": "Thick Fat",
+			"Ability2": "Hydration",
+			"Ability3": "Ice Body"
+			},
+		"PokeID": 86
 
+		},
 
+	"Sentret": {
+		"Name": "Sentret",
+		"Health": 35,
+		"Attack": 46,
+		"Defence": 34,
+		"SpAtk": 35,
+		"SpDef": 45,
+		"Type": {
+			"Type1": "Normal", 
+			"Type2": null
+			},
+		"Route": {
+			"Loc1": "Route 1",
+			"Loc2": "Route 29",
+			"Loc3": null,
+			"Loc4": null,
+			"Loc5": null
+		},
+		"Abilty": {
+			"Ability1": "Run Away",
+			"Ability2": "Keen Eye",
+			"Ability3": null
+			},
+		"PokeID": 161
+
+		},
 }
