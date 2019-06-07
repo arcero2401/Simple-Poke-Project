@@ -1,5 +1,5 @@
 {
-	"Bulbasaur": {
+	"1": {
 		"Name": "Bulbasaur",
 		"Health": 45,
 		"Attack": 49,
@@ -25,7 +25,7 @@
 		"PokeID": 1
 
 		},
-	"Seel": {
+	"2": {
 		"Name": "Seel",
 		"Health": 65,
 		"Attack": 45,
@@ -52,7 +52,7 @@
 
 		},
 
-	"Sentret": {
+	"3": {
 		"Name": "Sentret",
 		"Health": 35,
 		"Attack": 46,

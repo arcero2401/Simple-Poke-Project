@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -16,6 +17,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import org.json.*;
 
 public class WindowFrameWork {
 	// Global Variables
@@ -51,24 +54,29 @@ public class WindowFrameWork {
 	public static void searchPhrase() throws FileNotFoundException {
 
 		// Gets text within the searchName - Can be set to console output for
-		String searchText = searchName.getText();
+		String searchNameText = searchName.getText();
+		String searchRouteText = searchRoute.getText();
+		String searchTypeText = searchType.getText();
+		Object nameString = searchNameText;
+		Object routeString = searchRouteText;
+		Object typeString = searchTypeText;
 
 		// Debugging
 		// System.out.println(searchText);
 
-		File index = new File("Index.txt");
+		//File index = new File("Index.txt");
 
 		// Data Validation
 		if (Name.isSelected() == false
 				&& Route.isSelected() == false
 				&& Type.isSelected() == false) {
-			System.out.println("Select a Search Phrase");
-			searchNameArea.setText("Select a Search Phrase");
+			System.out.println("Select a Search Parameter");
+			searchNameArea.setText("Select a Search Parameter");
 		}
 
 		// Creates scanner to read from file and text box string
-		Scanner indexScanner = new Scanner(index);
-		String phrase = indexScanner.findInLine("[A-Za-z].*[A-Za-z]");
+		//Scanner indexScanner = new Scanner(index);
+		//String phrase = indexScanner.findInLine("[A-Za-z].*[A-Za-z]");
 
 		// Creates Switches to handle search phrases
 		int searchSwitchOR = 1;
@@ -80,12 +88,15 @@ public class WindowFrameWork {
 		 * text string from the Search.txt file
 		 */
 		if (Route.isSelected() == true) {
-			switch (searchSwitchPHRASE) {
-
-			// Data Validation
-			case 1:
+			switch (searchSwitchPHRASE) {}
+				
+			String salsa = SearchEm.route(searchRouteText);
+			System.out.println(salsa);
+		}
+		/*
+		case 1:
 				if (searchText.isEmpty()) {
-					searchNameArea.setText("Enter a File Name");
+					searchNameArea.setText("Enter a Route");
 					break;
 				}
 				// Search Functionality
@@ -102,17 +113,25 @@ public class WindowFrameWork {
 								lineToRead));
 					}
 				}
+			
 			}
-		}
+		}{
+		
+		*/
 
 		/*
 		 * Handles AND search phrase: Type - Searches through the
 		 * Search.txt file for text not entered into the text box.
 		 */
+			
+			
 		if (Type.isSelected() == true) {
-			switch (searchSwitchAND) {
-
-			// Data Validation
+			switch (searchSwitchAND) {}
+			String guac = SearchEm.type(searchTypeText);
+			System.out.println(guac);
+			}
+		
+			/* Data Validation
 			case 1:
 				if (searchText.isEmpty()) {
 					searchNameArea.setText("Enter a File Name");
@@ -134,15 +153,24 @@ public class WindowFrameWork {
 				}
 			}
 		}
+		
+		*/
+		
 
 		/*
 		 * Handles OR search phrase: [EXPLAIN WORKFLOW FOR "OR" SEARCH] Searches
 		 * through the Search.txt file for all text entered.
 		 */
+			
+		
 		if (Name.isSelected() == true) {
-			switch (searchSwitchOR) {
-
-			// Data Validation
+			switch (searchSwitchOR) {}
+			JSONObject queso = SearchEm.name(searchNameText);
+			String printer = queso.toString();
+			System.out.println(printer);
+		}
+	}
+			/* Data Validation
 			case 1:
 				if (searchText.isEmpty()) {
 					searchNameArea.setText("Enter a File Name");
@@ -174,6 +202,7 @@ public class WindowFrameWork {
 		}
 
 	}
+	*/
 
 	public static void createSearchEngine() {
 		// Frame
@@ -181,6 +210,7 @@ public class WindowFrameWork {
 
 		// Label
 		JLabel titleLabel = new JLabel("Enter Criteria");
+		JLabel levelLabel = new JLabel("Enter Level Range");
 
 		// Button Group
 		ButtonGroup radioButtons = new ButtonGroup();
@@ -216,6 +246,11 @@ public class WindowFrameWork {
 		titleLabel.setBounds(280, 10, 250, 50);
 		titleLabel.setFont(new Font("Serif", Font.BOLD, 30));
 
+		
+		levelLabel.setBounds(400, 125, 150, 50);
+		levelLabel.setFont(new Font("Serif", Font.PLAIN, 15));
+		
+		
 		// Set size of the text box
 		searchName.setBounds(155, 60, 200, 30);
 		searchType.setBounds(155, 100, 200, 30);
@@ -271,6 +306,7 @@ public class WindowFrameWork {
 
 		// Elements added
 		frame.add(titleLabel);
+		frame.add(levelLabel);
 		frame.add(searchName);
 		frame.add(searchRoute);
 		frame.add(searchType);
@@ -316,7 +352,7 @@ public class WindowFrameWork {
 				SearchItMaintenance.createSubMaintenance();
 			}
 		});
-
+		 */
 		// Handles Search Button Functionality
 		buttonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -327,7 +363,7 @@ public class WindowFrameWork {
 				}
 			}
 		});
-
+		/*
 		// Creates new frame for About page
 		subAboutPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
